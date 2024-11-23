@@ -1,20 +1,22 @@
-def matrix_to_string(matrix):
+def string_to_matrix(hex_string):
     """
-    Converts a 4x4 matrix into a 32-hexits string, read column-wise.
+    Converts a 32-hexits string into a 4x4 matrix, filled column-wise.
     
     Args:
-        matrix (list): A 4x4 matrix where each element is 2 hexits.
+        hex_string (str): A string of 32 hexadecimal characters.
         
     Returns:
-        str: A string of 32 hexadecimal characters.
+        list: A 4x4 matrix where each element is 2 hexits.
     """
-    if len(matrix) != 4 or any(len(row) != 4 for row in matrix):
-        raise ValueError("Input must be a 4x4 matrix.")
+    if len(hex_string) != 32:
+        raise ValueError("Input string must be exactly 32 hex characters long.")
     
-    # Read the matrix column-wise to form the string
-    hex_string = ""
+    # Create an empty 4x4 matrix
+    matrix = [['' for _ in range(4)] for _ in range(4)]
+    
+    # Fill the matrix column-wise
     for col in range(4):
         for row in range(4):
-            hex_string += matrix[row][col]
+            matrix[row][col] = hex_string[(col * 4 + row) * 2: (col * 4 + row + 1) * 2]
     
-    return hex_string
+    return matrix
