@@ -46,8 +46,3 @@ def gf2_multiply_and_mod(hex1, hex2, mod_hex='11B'):
     # Convert result to hex and return
     return hex(result)[2:].upper()
 
-print(gf2_multiply_and_mod('b3','0B'))
-print(gf2_multiply_and_mod('97','0D'))
-print(gf2_multiply_and_mod('48','09'))
-print(gf2_multiply_and_mod('cc','0E'))
-

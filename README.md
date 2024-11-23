@@ -1,2 +1,3 @@
 # aes
-simple aes encryption and decryption using python.
+
+This is a python code for simple aes encrypter and decrypter.

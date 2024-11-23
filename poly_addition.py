@@ -29,6 +29,3 @@ def xor_hex_mod_11b(*hex_numbers):
 
     # Convert the result back to hex and return (ensure 2 hexits with zfill)
     return hex(result)[2:].upper().zfill(2)
-
-
-print(xor_hex_mod_11b('52','41','31','A0'))
